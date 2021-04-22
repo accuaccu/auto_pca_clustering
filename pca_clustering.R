@@ -19,7 +19,7 @@ pca_clustering <- function(x, b = 2, label_text = NULL, loadarrows = F) {
   k <-  which.max(result_silhouette_mean)
   
   # Obtain classes by fitting kmeans clustering using k centers:
-  k_cluster_classes <- kmeans(dist_pca, centers = k+1)$cluster
+  k_cluster_classes <- pam(dist_pca, k = k+1)$clustering
   
   # Obtain 2 first PC and classes:
   pca_scores <- fit_pca$scores[,1:2]
