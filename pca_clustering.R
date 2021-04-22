@@ -5,7 +5,7 @@ pca_clustering <- function(x, b = 2, label_text = NULL, loadarrows = F) {
   fit_pca <- princomp(x, cor = T)
   dist_pca <- dist(fit_pca$scores, method = 'euclidean')
   
-  # Do clustering,based on median, using k = 2,...,10, and replicate b times:
+  # Do clustering, based on median, using k = 2,...,10, and replicate b times:
   result_clustering <- list()
   for (i in 1:9) {
     result_clustering[[i]] <- replicate(b,pam(dist_pca, k = i+1)$clustering)
