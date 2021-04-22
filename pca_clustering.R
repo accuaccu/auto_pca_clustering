@@ -73,7 +73,7 @@ pca_clustering(iris[,-5], b = 10)
 pca_clustering(iris[,-5], b = 10, loadarrows = T)
 pca_clustering(iris[,-5], b = 10, loadarrows = T, label_text = iris[,5])
 
-# Example Prostate (clustering separeates two classes, which match quite well with Gleason score < 7 vs. Gleason score >= 7):
+# Example Prostate (clustering separeates two classes, which match quite well with Gleason score:
 library(lasso2)
 data("Prostate")
 pca_clustering(Prostate[,-c(5,7,8)], b = 10)
