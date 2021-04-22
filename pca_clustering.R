@@ -18,7 +18,7 @@ pca_clustering <- function(x, b = 2, label_text = NULL, loadarrows = F) {
   # Find the k which yields highest average silhouette width:
   k <-  which.max(result_silhouette_mean)
   
-  # Obtain classes by fitting kmeans clustering using k centers:
+  # Obtain classes by fitting k-medoids clustering using k centers:
   k_cluster_classes <- pam(dist_pca, k = k+1)$clustering
   
   # Obtain 2 first PC and classes:
